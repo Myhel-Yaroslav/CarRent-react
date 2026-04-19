@@ -1,69 +1,220 @@
 
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Загальні налаштування */
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7f6; 
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  padding: 15px 50px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: 800;
   color: #007bff;
+  text-decoration: none;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: #333;
+  color: #444;
   font-weight: 500;
 }
 
+/* Панель статистики  */
+.stats-panel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
 
-.main-content {
-  flex: 1;
+.stat-box {
+  background: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  font-size: 1.1rem;
+  color: #8e949e;
+}
+
+.stat-box.available {
+  border-bottom: 4px solid #28a745; 
+}
+
+.stat-box.rented {
+  border-bottom: 4px solid #dc3545;
+}
+
+.stat-box .count {
+  font-weight: bold;
+}
+
+.stat-box.available .count { color: #28a745; }
+.stat-box.rented .count { color: #dc3545; }
+
+/* Акційний банер */
+.promo-banner {
+  background: #ffcc00;
+  color: #000;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Список авто та Картки */
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  padding-bottom: 50px;
+}
+
+.car-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.car-image {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+.car-card h3, .car-price, .total-price, .counter span {
+  color: #000000; 
+}
+
+/* Лічильник днів */
+.counter {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: #f8f9fa;
+  gap: 15px;
+  margin: 15px 0;
 }
 
-.hero h1 {
-  font-size: 48px;
-  color: #222;
+.counter button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.rented-placeholder {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* Кнопки оренди та повернення */
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
 }
 
 .btn-primary {
-  padding: 12px 24px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
+  background-color: #007bff; 
 }
 
+.btn-secondary {
+  background-color: #6c757d ; 
+}
 
+/* Лоадер */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.loader-gif {
+  width: 150px;
+}
+
+/* Footer */
 .footer {
-  text-align: center;
+  margin-top: auto;
   padding: 20px;
-  background-color: #222;
-  color: #fff;
+  background: #222;
+  color: white;
 }
