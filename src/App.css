@@ -218,3 +218,25 @@
   background: #222;
   color: white;
 }
+.page-content {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.details-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  color: #000000;
+}
+
+.details-info {
+  margin: 30px 0;
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.home-page h1 {
+  font-size: 3rem;
+  color: #000000;
+}

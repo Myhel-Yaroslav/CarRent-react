@@ -1,19 +1,20 @@
-const CarCard = ({ brand, model, price, image, status, days, onToggle, changeDays }) => {
+import { Link } from 'react-router-dom';
+
+const CarCard = ({ id, brand, model, price, image, status, days, onToggle, changeDays }) => {
   const total = price * days;
 
   return (
     <div className={`car-card ${status === 'rented' ? 'is-rented' : ''}`}>
-      {/* Статус авто */}
-      <div className="status-badge">
-        {status === 'available' ? '● Доступна' : '○ В оренді'}
-      </div>
-      
-      {}
+      <div className="status-badge">{status === 'available' ? '● Доступна' : '○ В оренді'}</div>
       <img src={image} alt={brand} className="car-image" />
-      <h3>{brand} {model}</h3>
-      <p className="car-price">Ціна: {price} грн/день</p>
       
-      {}
+      {/* Динамічний лінк на деталі */}
+      <Link to={`/car/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+        <h3>{brand} {model}</h3>
+      </Link>
+      
+      <p>Ціна: {price} грн/день</p>
+      
       {status === 'available' ? (
         <div className="counter">
           <button onClick={() => changeDays(-1)}>-</button>
@@ -21,18 +22,11 @@ const CarCard = ({ brand, model, price, image, status, days, onToggle, changeDay
           <button onClick={() => changeDays(1)}>+</button>
         </div>
       ) : (
-        <div className="rented-placeholder">
-          Період: {days} дн.
-        </div>
+        <div className="rent-info" style={{margin: '15px 0', color: '#888'}}><i>Зараз в оренді</i></div>
       )}
 
       <p className="total-price">Разом: <strong>{total} грн</strong></p>
-
-      {}
-      <button 
-        className={`buy-btn ${status === 'rented' ? 'btn-secondary' : 'btn-primary'}`} 
-        onClick={onToggle}
-      >
+      <button className={`buy-btn ${status === 'rented' ? 'btn-secondary' : 'btn-primary'}`} onClick={onToggle}>
         {status === 'available' ? 'Орендувати' : 'Повернути'}
       </button>
     </div>
