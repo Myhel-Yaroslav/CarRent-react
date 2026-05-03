@@ -8,7 +8,7 @@ const CarCard = ({ id, brand, model, price, image, status, days, onToggle, chang
       <div className="status-badge">{status === 'available' ? '● Доступна' : '○ В оренді'}</div>
       <img src={image} alt={brand} className="car-image" />
       
-      {/* Динамічний лінк на деталі */}
+      {}
       <Link to={`/car/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <h3>{brand} {model}</h3>
       </Link>
