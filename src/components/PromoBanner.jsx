@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const PromoBanner = () => {
-  const [seconds, setSeconds] = useState(900
-  );
+  const [seconds, setSeconds] = useState(900);
 
   useEffect(() => {
     const timer = setInterval(() => {

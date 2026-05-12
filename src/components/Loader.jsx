@@ -1,9 +1,7 @@
-import loadingGif from '../assets/loading.gif';
-
 const Loader = () => (
   <div className="loader-container">
-    <img src={loadingGif} alt="Завантаження..." className="loader-gif" />
-    <p>Обробляємо дані автопарку...</p>
+    <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#007bff' }}>Завантаження...</div>
+    <p style={{ marginTop: '10px', color: 'black' }}>Обробляємо дані автопарку...</p>
   </div>
 );
 
